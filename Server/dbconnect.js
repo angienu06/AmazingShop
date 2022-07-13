@@ -5,15 +5,17 @@ var app = express();
 const bp = require('body-parser');
 
 app.use(bp.json());
+app.use(express.urlencoded({extended: false}));
+
+app.get('/', (req, res)=>{
+res.send('Hello Word')
+});
 
 let mysqlconecction= mysql.createConnection({
     host: 'localhost',
     user: 'root',
     database: 'db_amazingshop',
-    password: '',
-    port: 3306
-   
-    
+    password: ''
 });
 
 //test de coneccion 
