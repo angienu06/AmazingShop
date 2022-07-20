@@ -30,7 +30,7 @@ router.post('/insertreport', (req, res) =>{
     });
 });
 
-
+//Actualizar reportes
 router.put('/updatereport', (req, res) =>{
     const {CodigoReporte, Cod_usuario, Nombre,  TipoReporte, Periodo, FechInicial, FechaFinal, Tipo_Formato, Correo, TipoCorreo ,Fecha_Registro, Usr_Registro} = req.body;
     const query = ` CALL UPT_REPORTES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); `;

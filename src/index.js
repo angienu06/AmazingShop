@@ -1,5 +1,7 @@
 const express = require ('express');
-const router = require('./routes/Reportes');
+const router = express.Router();
+
+
 
 
 const app = express();
@@ -12,6 +14,7 @@ app.use(express.json());
  
 //Routes
 app.use(require ('./routes/Reportes'));
+app.use(require('./routes/Estadisticas'));
 
 
 
@@ -23,3 +26,5 @@ console.log('Server on port', app.get('port'))
 app.get('/', (req, rest ) =>{
     rest.send('Hello word');
 });
+
+
