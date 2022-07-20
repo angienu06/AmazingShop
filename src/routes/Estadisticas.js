@@ -29,6 +29,7 @@ router.post('/insert-statistics', (req, res) =>{
     });   
 });
 
+//Actualizar estadisticaS
 router.put('/update-statistics', (req, res) =>{
     const {Cod_Estadistica, Cod_usuario, Nombre, FechaInicio, FechaFinal, TipoReporte, IND_Email, Usr_Registro, Tipo_Formato} = req.body;
     const query = ` CALL UPT_ESTADISTICAS (?, ?, ?, ?, ?, ?, ?, ?, ? ); `;
