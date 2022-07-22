@@ -42,5 +42,16 @@ router.put('/update-statistics', (req, res) =>{
     }
     });
 });
+
+// Mostrar Historial de Estadisticas
+router.get('/showestaticshistory', (req, res) =>{
+    mysqlConnection.query('CALL SELECT_HISTORIAL_ESTADISTICAS', (err, rows, fields)=>{
+        if(!err){
+            res.json(rows);
+        } else{
+            console.log(err);
+         }
+      });
+    });
  
 module.exports = router;

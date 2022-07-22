@@ -44,4 +44,15 @@ router.put('/updatereport', (req, res) =>{
     });
 });
 
+//Mostrar el Historial de Reportes
+router.get('/showreporthistory', (req, res) =>{
+    mysqlConnection.query('CALL SELECT_HISTORIALREPORTES', (err, rows, fields)=>{
+        if(!err){
+            res.json(rows);
+        } else{
+            console.log(err);
+         }
+      });
+    });
+
 module.exports = router;
