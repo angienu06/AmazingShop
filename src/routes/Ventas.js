@@ -5,7 +5,7 @@ const router = express.Router();
 const mysqlConnection = require('../database');
 
 //Mostrar tabla de Ventas
-outer.get('/showSales', (req, res) => {
+router.get('/showSales', (req, res) => {
     mysqlConnection.query('SELECT * FROM db_amazingshop.ventas', (err, rows, fields) => {
         if (!err) {
             res.json(rows);

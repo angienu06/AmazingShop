@@ -15,7 +15,8 @@ app.use(express.json());
 //Routes
 app.use(require ('./routes/Reportes'));
 app.use(require('./routes/Estadisticas'));
-
+app.use(require('./routes/Compras'));
+app.use(require('./routes/Ventas'));
 
 
 //Staring the server
